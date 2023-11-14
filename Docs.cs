@@ -16,8 +16,8 @@ namespace RSA
         public static void BuscarArchivoCifrar(long dpi,BigInteger ClaveP)//aquí se agrega la llave
         {
             RSAA rsaa = new RSAA();
-            string carpeta = @"C:\Users\Diego\OneDrive\Documentos\Diego\Universidad\5. Cuarto Ciclo\Estructuras II\RSA miller\inputs";//ruta carpeta con cartas
-            string ruta = @"C:\Users\Diego\OneDrive\Documentos\Diego\Universidad\5. Cuarto Ciclo\Estructuras II\RSA miller\Personas agregadas.txt";
+            string carpeta = @"C:\Users\Diego\OneDrive\Documentos\Diego\Universidad\5. Cuarto Ciclo\Estructuras II\Lab4y5\inputs";//ruta carpeta con cartas
+            string ruta = @"C:\Users\Diego\OneDrive\Documentos\Diego\Universidad\5. Cuarto Ciclo\Estructuras II\Lab4y5\Personas agregadas.txt";
             long buscado = dpi;
             string llave = "millave";
              List<string> DPIs = new List<string>();
@@ -93,11 +93,51 @@ namespace RSA
             Console.WriteLine(salida.ToString());
         }
 
+        public string Cifrado(string entrada, string llave, char relleno)
+        {
+            entrada = (entrada.Length % llave.Length == 0) ? entrada : entrada.PadRight(entrada.Length - (entrada.Length % llave.Length) + llave.Length, relleno);
+            StringBuilder salida = new StringBuilder();
+            int totalCaracteres = entrada.Length;
+            int totalColumnas = llave.Length;
+            int totalFilas = (int)Math.Ceiling((double)totalCaracteres / totalColumnas);
+            char[,] filaCaracteres = new char[totalFilas, totalColumnas];
+            char[,] colCaracteres = new char[totalColumnas, totalFilas];
+            char[,] colOrdenadas = new char[totalColumnas, totalFilas];
+            int filaActual, columnaActual, i, j;
+            int[] mezclarIndexes = ObtenerIndex(llave);
+
+            for (i = 0; i < totalCaracteres; ++i)
+            {
+                filaActual = i / totalColumnas;
+                columnaActual = i % totalColumnas;
+                filaCaracteres[filaActual, columnaActual] = entrada[i];
+            }
+
+            for (i = 0; i < totalFilas; ++i)
+                for (j = 0; j < totalColumnas; ++j)
+                    colCaracteres[j, i] = filaCaracteres[i, j];
+
+            for (i = 0; i < totalColumnas; ++i)
+                for (j = 0; j < totalFilas; ++j)
+                    colOrdenadas[mezclarIndexes[i], j] = colCaracteres[i, j];
+
+            for (i = 0; i < totalCaracteres; ++i)
+            {
+                filaActual = i / totalFilas;
+                columnaActual = i % totalFilas;
+                salida.Append(colOrdenadas[filaActual, columnaActual]);
+            }
+
+            string salidaa = salida.ToString();
+
+            return salidaa;
+        }
+
         public static void EscribirCifrado(string nombreArchivo, string texto)
         {
             string contenido = texto;
 
-            string rutaArchivo = @$"C:\Users\Diego\OneDrive\Documentos\Diego\Universidad\5. Cuarto Ciclo\Estructuras II\RSA miller\Conversaciones Cifradas\{ nombreArchivo}-cifrado.txt";
+            string rutaArchivo = @$"C:\Users\Diego\OneDrive\Documentos\Diego\Universidad\5. Cuarto Ciclo\Estructuras II\Lab4y5\Conversaciones Cifradas\{ nombreArchivo}-cifrado.txt";
 
             try
             {
@@ -116,7 +156,7 @@ namespace RSA
 
         public static void BuscarArchivoDescifrar(long dpi)
         {
-            string carpeta = @"C:\Users\Diego\OneDrive\Documentos\Diego\Universidad\5. Cuarto Ciclo\Estructuras II\RSA miller\Conversaciones Cifradas"; // Cambia esto por la ruta de tu carpeta
+            string carpeta = @"C:\Users\Diego\OneDrive\Documentos\Diego\Universidad\5. Cuarto Ciclo\Estructuras II\Lab4y5\Conversaciones Cifradas"; // Cambia esto por la ruta de tu carpeta
             long buscado = dpi; // Cambia esto por el número entero que quieres verificar 
             string llave = "millave";
             // Obtener los nombres de los archivos en la carpeta
@@ -186,6 +226,43 @@ namespace RSA
             }
 
             Console.WriteLine(salida.ToString());
+        }
+
+        public string Descifra2(string entrada, string llave)
+        {
+            StringBuilder salida = new StringBuilder();
+            int totalCaracteres = entrada.Length;
+            int totalColumnas = (int)Math.Ceiling((double)totalCaracteres / llave.Length);
+            int totalFilas = llave.Length;
+            char[,] filaCaracteres = new char[totalFilas, totalColumnas];
+            char[,] colCaracteres = new char[totalColumnas, totalFilas];
+            char[,] colDesordenadas = new char[totalColumnas, totalFilas];
+            int filaActual, columnaActual, i, j;
+            int[] mezclarIndexes = ObtenerIndex(llave);
+
+            for (i = 0; i < totalCaracteres; ++i)
+            {
+                filaActual = i / totalColumnas;
+                columnaActual = i % totalColumnas;
+                filaCaracteres[filaActual, columnaActual] = entrada[i];
+            }
+
+            for (i = 0; i < totalFilas; ++i)
+                for (j = 0; j < totalColumnas; ++j)
+                    colCaracteres[j, i] = filaCaracteres[i, j];
+
+            for (i = 0; i < totalColumnas; ++i)
+                for (j = 0; j < totalFilas; ++j)
+                    colDesordenadas[i, j] = colCaracteres[i, mezclarIndexes[j]];
+
+            for (i = 0; i < totalCaracteres; ++i)
+            {
+                filaActual = i / totalFilas;
+                columnaActual = i % totalFilas;
+                salida.Append(colDesordenadas[filaActual, columnaActual]);
+            }
+
+            return salida.ToString();
         }
 
         private static int[] ObtenerIndex(string llave)

@@ -28,3 +28,20 @@ C:\Users\Diego\OneDrive\Documentos\Diego\Universidad\5. Cuarto Ciclo\Estructuras
 C:\Users\Diego\OneDrive\Documentos\Diego\Universidad\5. Cuarto Ciclo\Estructuras II\RSA miller\obj\Debug\net6.0\RSA.pdb
 C:\Users\Diego\OneDrive\Documentos\Diego\Universidad\5. Cuarto Ciclo\Estructuras II\RSA miller\obj\Debug\net6.0\RSA.genruntimeconfig.cache
 C:\Users\Diego\OneDrive\Documentos\Diego\Universidad\5. Cuarto Ciclo\Estructuras II\RSA miller\obj\Debug\net6.0\ref\RSA.dll
+C:\Users\Diego\OneDrive\Documentos\Diego\Universidad\5. Cuarto Ciclo\Estructuras II\Lab4y5\bin\Debug\net6.0\RSA.exe
+C:\Users\Diego\OneDrive\Documentos\Diego\Universidad\5. Cuarto Ciclo\Estructuras II\Lab4y5\bin\Debug\net6.0\RSA.deps.json
+C:\Users\Diego\OneDrive\Documentos\Diego\Universidad\5. Cuarto Ciclo\Estructuras II\Lab4y5\bin\Debug\net6.0\RSA.runtimeconfig.json
+C:\Users\Diego\OneDrive\Documentos\Diego\Universidad\5. Cuarto Ciclo\Estructuras II\Lab4y5\bin\Debug\net6.0\RSA.dll
+C:\Users\Diego\OneDrive\Documentos\Diego\Universidad\5. Cuarto Ciclo\Estructuras II\Lab4y5\bin\Debug\net6.0\RSA.pdb
+C:\Users\Diego\OneDrive\Documentos\Diego\Universidad\5. Cuarto Ciclo\Estructuras II\Lab4y5\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Diego\OneDrive\Documentos\Diego\Universidad\5. Cuarto Ciclo\Estructuras II\Lab4y5\obj\Debug\net6.0\RSA.csproj.AssemblyReference.cache
+C:\Users\Diego\OneDrive\Documentos\Diego\Universidad\5. Cuarto Ciclo\Estructuras II\Lab4y5\obj\Debug\net6.0\RSA.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Diego\OneDrive\Documentos\Diego\Universidad\5. Cuarto Ciclo\Estructuras II\Lab4y5\obj\Debug\net6.0\RSA.AssemblyInfoInputs.cache
+C:\Users\Diego\OneDrive\Documentos\Diego\Universidad\5. Cuarto Ciclo\Estructuras II\Lab4y5\obj\Debug\net6.0\RSA.AssemblyInfo.cs
+C:\Users\Diego\OneDrive\Documentos\Diego\Universidad\5. Cuarto Ciclo\Estructuras II\Lab4y5\obj\Debug\net6.0\RSA.csproj.CoreCompileInputs.cache
+C:\Users\Diego\OneDrive\Documentos\Diego\Universidad\5. Cuarto Ciclo\Estructuras II\Lab4y5\obj\Debug\net6.0\RSA.csproj.CopyComplete
+C:\Users\Diego\OneDrive\Documentos\Diego\Universidad\5. Cuarto Ciclo\Estructuras II\Lab4y5\obj\Debug\net6.0\RSA.dll
+C:\Users\Diego\OneDrive\Documentos\Diego\Universidad\5. Cuarto Ciclo\Estructuras II\Lab4y5\obj\Debug\net6.0\refint\RSA.dll
+C:\Users\Diego\OneDrive\Documentos\Diego\Universidad\5. Cuarto Ciclo\Estructuras II\Lab4y5\obj\Debug\net6.0\RSA.pdb
+C:\Users\Diego\OneDrive\Documentos\Diego\Universidad\5. Cuarto Ciclo\Estructuras II\Lab4y5\obj\Debug\net6.0\RSA.genruntimeconfig.cache
+C:\Users\Diego\OneDrive\Documentos\Diego\Universidad\5. Cuarto Ciclo\Estructuras II\Lab4y5\obj\Debug\net6.0\ref\RSA.dll

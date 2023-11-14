@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "BstoRcsNSrImLJGMBWmYqY6//dsYGsCQzYnLzX1yK8U16XrqnAvMAVSabl2NDEIpxcH0COIjR1UwQ1SS4lE7ug==",
+  "dgSpecHash": "TJuFwu0y/K6j/XJAyDoQFbdvuPRkjAC5vb+ZQZuU+NvVZrdtEFzTRPO5ovhpuXDpZpxCmP+YxUCaUlxf1Us2ig==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Diego\\OneDrive\\Documentos\\Diego\\Universidad\\5. Cuarto Ciclo\\Estructuras II\\RSA miller\\RSA.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Diego\\OneDrive\\Documentos\\Diego\\Universidad\\5. Cuarto Ciclo\\Estructuras II\\Lab4y5\\RSA.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Diego\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

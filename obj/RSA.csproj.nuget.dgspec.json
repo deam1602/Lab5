@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Diego\\OneDrive\\Documentos\\Diego\\Universidad\\5. Cuarto Ciclo\\Estructuras II\\RSA miller\\RSA.csproj": {}
+    "C:\\Users\\Diego\\OneDrive\\Documentos\\Diego\\Universidad\\5. Cuarto Ciclo\\Estructuras II\\Lab4y5\\RSA.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Diego\\OneDrive\\Documentos\\Diego\\Universidad\\5. Cuarto Ciclo\\Estructuras II\\RSA miller\\RSA.csproj": {
+    "C:\\Users\\Diego\\OneDrive\\Documentos\\Diego\\Universidad\\5. Cuarto Ciclo\\Estructuras II\\Lab4y5\\RSA.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Diego\\OneDrive\\Documentos\\Diego\\Universidad\\5. Cuarto Ciclo\\Estructuras II\\RSA miller\\RSA.csproj",
+        "projectUniqueName": "C:\\Users\\Diego\\OneDrive\\Documentos\\Diego\\Universidad\\5. Cuarto Ciclo\\Estructuras II\\Lab4y5\\RSA.csproj",
         "projectName": "RSA",
-        "projectPath": "C:\\Users\\Diego\\OneDrive\\Documentos\\Diego\\Universidad\\5. Cuarto Ciclo\\Estructuras II\\RSA miller\\RSA.csproj",
+        "projectPath": "C:\\Users\\Diego\\OneDrive\\Documentos\\Diego\\Universidad\\5. Cuarto Ciclo\\Estructuras II\\Lab4y5\\RSA.csproj",
         "packagesPath": "C:\\Users\\Diego\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Diego\\OneDrive\\Documentos\\Diego\\Universidad\\5. Cuarto Ciclo\\Estructuras II\\RSA miller\\obj\\",
+        "outputPath": "C:\\Users\\Diego\\OneDrive\\Documentos\\Diego\\Universidad\\5. Cuarto Ciclo\\Estructuras II\\Lab4y5\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Programas\\Visual\\Componentes\\NuGetPackages"
@@ -44,6 +44,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

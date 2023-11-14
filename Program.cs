@@ -13,10 +13,12 @@ namespace RsaEncryptionSample
         //Variables globales
         List<BigInteger> ListaDivisores = new List<BigInteger>();
         Docs docs = new Docs();
+        
          
 
         static void Main(string[] args)
         {
+            Login logg = new Login();
             //Globales
             RSAA rsa = new RSAA();
             BigInteger p = 0;
@@ -27,7 +29,7 @@ namespace RsaEncryptionSample
             //obtener numero primo para variable Q-----------------------------------------------------------------------
             BigIntegerPrimeTest BIPT = new BigIntegerPrimeTest();
             RandomBigIntegerGenerator RBI = new RandomBigIntegerGenerator();
-            int bitlen = 20; //cantidad de bits 
+            int bitlen = 15; //cantidad de bits 
             BigInteger RandomNumber = RBI.NextBigInteger(bitlen);
             while (BIPT.IsProbablePrime(RandomNumber, 100) != true) { RandomNumber = RBI.NextBigInteger(bitlen); }
             if (BIPT.IsProbablePrime(RandomNumber, 100) == true) { q = RandomNumber; }
@@ -35,7 +37,7 @@ namespace RsaEncryptionSample
             //obtener numero primo para variable P
             BigIntegerPrimeTest BIPT2 = new BigIntegerPrimeTest();
             RandomBigIntegerGenerator RBI2 = new RandomBigIntegerGenerator();
-            int bitlen2 = 20; //cantidad de bits 
+            int bitlen2 = 15; //cantidad de bits 
             BigInteger RandomNumber2 = RBI2.NextBigInteger(bitlen2);
             while (BIPT2.IsProbablePrime(RandomNumber2, 100) != true) { RandomNumber2 = RBI2.NextBigInteger(bitlen2); }
             if (BIPT2.IsProbablePrime(RandomNumber2, 100) == true) { p = RandomNumber2; }
@@ -45,7 +47,7 @@ namespace RsaEncryptionSample
 
             try
             {
-                Console.WriteLine("¿Qué desea hacer? \n 1.MOSTRAR CARTAS CIFRADAS\n 2.MOSTRAR CARTAS DESCRIFADAS\n");
+                Console.WriteLine("¿Qué desea hacer? \n 1.MOSTRAR CONVERSACIONES CIFRADAS\n 2.MOSTRAR CONVERSACIONES DESCRIFADAS\n 3.INGRESAR RECLUTADOR");
                 string opcion = Console.ReadLine().Trim();
                 while (opcion != "0")
                 {
@@ -69,12 +71,23 @@ namespace RsaEncryptionSample
                                 throw;
                             }
 
-                            Console.WriteLine("\n¿Qué desea hacer? \n 1.MOSTRAR CARTAS CIFRADAS\n 2.MOSTRAR CARTAS DESCRIFADAS\n");
+                            Console.WriteLine("\n¿Qué desea hacer? \n 1.MOSTRAR CONVERSACIONES CIFRADAS\n 2.MOSTRAR CONVERSACIONES DESCRIFADAS\n 3.INGRESAR RECLUTADOR\"");
                             opcion = Console.ReadLine().Trim();
                             break;
                         case "2":
                             ConversacionesDescifradas();
-                            Console.WriteLine("\n¿Qué desea hacer? \n 1.MOSTRAR CARTAS CIFRADAS\n 2.MOSTRAR CARTAS DESCRIFADAS\n");
+                            Console.WriteLine("\n¿Qué desea hacer? \n 1.MOSTRAR CONVERSACIONES CIFRADAS\n 2.MOSTRAR CONVERSACIONES DESCRIFADAS\n 3.INGRESAR RECLUTADOR\"");
+                            opcion = Console.ReadLine().Trim();
+                            break;
+                        case "3":
+                            logg.leerArchivo();
+                            logg.CrearUsuarios(ClaveP);
+                            Console.WriteLine("Escriba su nombre de usuario:");
+                            string usuario = Console.ReadLine().Trim();
+                            Console.WriteLine("Escriba su contraseña:");
+                            string contra = Console.ReadLine().Trim();
+                            logg.VerificarLogin(usuario, contra);
+                            Console.WriteLine("\n¿Qué desea hacer? \n 1.MOSTRAR CONVERSACIONES CIFRADAS\n 2.MOSTRAR CONVERSACIONES DESCRIFADAS\n 3.INGRESAR RECLUTADOR\"");
                             opcion = Console.ReadLine().Trim();
                             break;
                         default:
@@ -203,7 +216,7 @@ namespace RsaEncryptionSample
             //obtener numero primo para variable K
             BigIntegerPrimeTest BIPTK = new BigIntegerPrimeTest();
             RandomBigIntegerGenerator RBIK = new RandomBigIntegerGenerator();
-            int bitlenk = 20; //cantidad de bits 
+            int bitlenk = 10; //cantidad de bits 
             BigInteger RandomNumber2 = RBIK.NextBigInteger(bitlenk);
             while (BIPTK.IsProbablePrime(RandomNumber2, 100) != true) { RandomNumber2 = RBIK.NextBigInteger(bitlenk); }
             if (BIPTK.IsProbablePrime(RandomNumber2, 100) == true) { k = RandomNumber2; }
